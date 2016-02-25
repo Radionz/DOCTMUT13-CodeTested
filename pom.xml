@@ -25,7 +25,7 @@
                 </executions>
                 <configuration>
                     <processors>
-                        <processor>fr.unice.polytech.doct13.plugin.Mutator</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
                     </processors>
                 </configuration>
                 <dependencies>
