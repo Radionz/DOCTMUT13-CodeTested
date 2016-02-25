@@ -10,7 +10,7 @@ pom_path="."
 html_path="$pom_path\target\html-report"
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
-	sed -i -e "s/$prec/<processor>fr.unice.polytech.doct13.processors.$line<\/processor>/g" "$pom_path\pom.xml"
+	sed -i -e "s/$prec/<processor>fr.unice.polytech.doct13.processors.binary.$line<\/processor>/g" "$pom_path\pom.xml"
 	#je lance les tests
 	mvn test -f "$pom_path"
 
