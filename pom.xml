@@ -25,23 +25,23 @@
                 </executions>
                 <configuration>
                     <processors>
-                        <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.binary.BinaryProcessor</processor>
                         <!-- Other examples
-                        <processor>fr.unice.polytech.doct13.processors.binary.PlusProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.binary.MinusProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.binary.MultProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.binary.LEProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.binary.GTProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
 
-                        <processor>fr.unice.polytech.doct13.processors.unary.PreDecProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.unary.NegProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
                         -->
                     </processors>
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <artifactId>mutation</artifactId>
                         <groupId>fr.polytech.doctmut.13</groupId>
+                        <artifactId>mutation</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
 
