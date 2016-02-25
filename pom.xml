@@ -25,7 +25,17 @@
                 </executions>
                 <configuration>
                     <processors>
-                        <processor>fr.unice.polytech.doct13.processors.BinaryOperatorProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
+                        <!-- Other examples
+                        <processor>fr.unice.polytech.doct13.processors.binary.PlusProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.binary.MinusProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.binary.MultProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.binary.LEProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.binary.GTProcessor</processor>
+
+                        <processor>fr.unice.polytech.doct13.processors.unary.PreDecProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.processors.unary.NegProcessor</processor>
+                        -->
                     </processors>
                 </configuration>
                 <dependencies>
