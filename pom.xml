@@ -8,6 +8,38 @@
     <artifactId>programToBeTested</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>fr.inria.gforge.spoon</groupId>
+                <artifactId>spoon-maven-plugin</artifactId>
+                <version>2.2</version>
+
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <processors>
+                        <processor>fr.unice.polytech.doct13.processors.ClassProcessor</processor>
+                    </processors>
+                </configuration>
+                <!-- To be sure that you use the latest version of Spoon, specify it as dependency. -->
+                <dependencies>
+                    <dependency>
+                        <groupId>fr.inria.gforge.spoon</groupId>
+                        <artifactId>spoon-core</artifactId>
+                        <version>5.0.2</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -15,6 +47,4 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
-
-
 </project>
