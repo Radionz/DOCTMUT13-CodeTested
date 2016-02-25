@@ -25,11 +25,16 @@
                 </executions>
                 <configuration>
                     <processors>
-                        <processor>fr.unice.polytech.doct13.processors.ClassProcessor</processor>
+                        <processor>fr.unice.polytech.doct13.plugin.Mutator</processor>
                     </processors>
                 </configuration>
-                <!-- To be sure that you use the latest version of Spoon, specify it as dependency. -->
                 <dependencies>
+                    <dependency>
+                        <artifactId>mutation</artifactId>
+                        <groupId>fr.polytech.doctmut.13</groupId>
+                        <version>1.0-SNAPSHOT</version>
+                    </dependency>
+
                     <dependency>
                         <groupId>fr.inria.gforge.spoon</groupId>
                         <artifactId>spoon-core</artifactId>
