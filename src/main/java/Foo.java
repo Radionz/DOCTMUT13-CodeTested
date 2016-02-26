@@ -7,7 +7,7 @@ public class Foo {
 
     // Should return 2 + 1 = 3
     public int plus(){
-        return 2+1;
+        return 2 + 1;
     }
 
     // Should return 1 - 3 = -2

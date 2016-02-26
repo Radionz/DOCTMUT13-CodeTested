@@ -34,17 +34,17 @@
                     <processors>
                         <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
 
-                        <processor>fr.unice.polytech.doct13.processors.binary.PlusProcessor</processor>
                         <!-- Other examples
-                        <processor>fr.unice.polytech.doct13.processors.binary.MinusProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.binary.LEProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.binary.GTProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.binary.MultProcessor</processor>
+                                                                      <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
+                                               <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
+                                               <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
+                                               <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
+                                               <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
 
-                        <processor>fr.unice.polytech.doct13.processors.unary.PostDecProcessor</processor>
-                        <processor>fr.unice.polytech.doct13.processors.unary.PostIncProcessor</processor>
+                                               <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
+                                               <processor>fr.unice.polytech.doct13.processors.binary.EqualsProcessor</processor>
 
-                        -->
+                                               -->
                     </processors>
                 </configuration>
                 <dependencies>
