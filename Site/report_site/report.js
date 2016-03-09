@@ -21,8 +21,8 @@ var report = "<?xml version='1.0' encoding='UTF-8' standalone='no'?> \
     </class>\
     <class name='TriangleTest' originalPath='../../src/main/java/Triangle.java' mutantPath='../generated-sources/spoon/Triangle.java'>\
       <method name='testEquilateral' status='dead'/>\
-      <method name='testIsoceles' status='alive'/>\
-      <method name='testScalene' status='alive'/>\
+      <method name='testIsoceles' status='dead'/>\
+      <method name='testScalene' status='dead'/>\
       <method name='testGiantTriangle' status='alive'/>\
     </class>\
   </mutation>\
