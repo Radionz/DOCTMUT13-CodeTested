@@ -307,8 +307,8 @@
       var deadM = 0, aliveM = 0;
       var mutationName = $(this).attr("name");
 
-      htmlMenu += "<li><a href='#"+mutationName+"'>"+mutationName+"<span class='fa arrow'></span></a><ul class='nav nav-second-level'>";
-      htmlToAppend += "<div class='panel panel-default'><div class='panel-heading'><h3 class='panel-title' style='display:inline-block'><a data-toggle='collapse' data-parent='#mutations' href='#collapse"+mutationName+"'>"+mutationName+"</a></h3><div class='progress pull-right' style='width:50%; margin-bottom:0px'><div class='progress-bar progress-bar-success' role='progressbar' style='width:0%' id='killed"+mutationName+"'></div><div class='progress-bar progress-bar-danger' role='progressbar' style='width:100%' id='alive"+mutationName+"'></div></div></div><!-- .panel-heading --><div id='collapse"+mutationName+"' class='panel-collapse collapse'><div class='panel-body'><div class='panel-group' id='accordion"+mutationName+"'>";
+      htmlMenu += "<li><a data-toggle='collapse' data-parent='#mutations' href='#collapse"+mutationName+"' href='#"+mutationName+"'>"+mutationName+"<span class='fa arrow'></span></a><ul class='nav nav-second-level'>";
+      htmlToAppend += "<div class='panel panel-default'><div class='panel-heading' data-toggle='collapse' data-parent='#mutations' href='#collapse"+mutationName+"'><h3 class='panel-title' style='display:inline-block'>"+mutationName+"</h3><div class='progress pull-right' style='width:50%; margin-bottom:0px'><div class='progress-bar progress-bar-success' role='progressbar' style='width:0%' id='killed"+mutationName+"'></div><div class='progress-bar progress-bar-danger' role='progressbar' style='width:100%' id='alive"+mutationName+"'></div></div></div><!-- .panel-heading --><div id='collapse"+mutationName+"' class='panel-collapse collapse'><div class='panel-body'><div class='panel-group' id='accordion"+mutationName+"'>";
 
       $(this).find("class").each(  function()  {
         var deadC = 0, aliveC = 0;
@@ -317,8 +317,8 @@
         var originalPath = $(this).attr("originalPath");
         var mutantPath = $(this).attr("mutantPath");
 
-        htmlMenu += "<li><a href='#"+mutationName+className+"'>"+className+"</a></li>";
-        htmlToAppend += "<div class='panel panel-default'><div class='panel-heading'><h4 class='panel-title' style='display:inline-block'><a data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"'>Class "+className+"</a></h4><div class='progress pull-right' style='width:30%; margin-bottom:0px'><div class='progress-bar progress-bar-success' role='progressbar' style='width:0%' id='killed"+mutationName+className+"'></div><div class='progress-bar progress-bar-danger' role='progressbar' style='width:100%' id='alive"+mutationName+className+"'></div></div></div><div id='collapse"+mutationName+className+"' class='panel-collapse collapse'><div class='panel-body'>";
+        htmlMenu += "<li><a data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"' href='#"+mutationName+className+"'>"+className+"</a></li>";
+        htmlToAppend += "<div class='panel panel-default'><div class='panel-heading' data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"'><h4 class='panel-title' style='display:inline-block'>Class "+className+"</h4><div class='progress pull-right' style='width:30%; margin-bottom:0px'><div class='progress-bar progress-bar-success' role='progressbar' style='width:0%' id='killed"+mutationName+className+"'></div><div class='progress-bar progress-bar-danger' role='progressbar' style='width:100%' id='alive"+mutationName+className+"'></div></div></div><div id='collapse"+mutationName+className+"' class='panel-collapse collapse'><div class='panel-body'>";
 
         $(this).find("method").each( function() {
           var MethodName = $(this).attr("name");
