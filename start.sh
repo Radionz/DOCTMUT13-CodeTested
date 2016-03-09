@@ -25,9 +25,10 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 
 	echo "$testresult" >> $report_final
 
-	"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "$html_path\htmlReport.html"
 done < "$1"
 
 echo "</mutations>'" >> $report_final
 
 sed -i -e "s/$/\\\/g" -e "s/<\/mutations>'\\\/<\/mutations>/" $report_final
+
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "$html_path\index.html"
