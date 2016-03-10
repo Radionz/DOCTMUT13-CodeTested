@@ -179,11 +179,6 @@
         htmlMenu += "<li><a data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"' href='#"+mutationName+className+"'>"+className+"</a></li>";
         htmlToAppend += "<div class='panel panel-default'><div class='panel-heading' data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"'><h4 class='panel-title' style='display:inline-block'>Class "+className+"</h4><div class='progress pull-right' style='width:40%; margin-bottom:0px'><div class='progress-bar progress-bar-success' role='progressbar' style='width:"+((classDeadMutant/(parseInt(classAliveMutant)+parseInt(classDeadMutant)))*100)+"%;' id='killed"+mutationName+className+"'>"+classDeadMutant+" Killed</div><div class='progress-bar progress-bar-danger' role='progressbar' style='width:"+((classAliveMutant/(parseInt(classAliveMutant)+parseInt(classDeadMutant)))*100)+"%;' id='alive"+mutationName+className+"'>"+classAliveMutant+" Alive</div></div></div><div id='collapse"+mutationName+className+"' class='panel-collapse collapse'><div class='panel-body'>";
 
-        console.log(className);
-        console.log(classAliveMutant+classDeadMutant);
-        console.log(((classDeadMutant/(classAliveMutant+classDeadMutant))*100));
-        console.log(((classAliveMutant/(classAliveMutant+classDeadMutant))*100));
-
         $(this).find("method").each( function() {
           var MethodName = $(this).attr("name");
           var status = $(this).attr("status");
@@ -191,15 +186,18 @@
             alive++;
             aliveM++;
             aliveC++;
+            htmlToAppend += MethodName+": <span class='label label-danger'>"+status+"</span><br>";
           }
           else {
             dead++;
             deadM++;
             deadC++;
+            htmlToAppend += MethodName+": <span class='label label-success'>"+status+"</span><br>";
           }
 
-          htmlToAppend += MethodName+": "+status+"<br>";
         });
+        htmlToAppend += "</br><h4>Code diffrence between original and mutant code</h4><div id='compare"+mutationName+className+"'></div>";
+
         htmlToAppend += "</div></div></div>";
 
       });
@@ -225,6 +223,33 @@
       colors: ["#5CB85C","#D9534F"],
       formatter: function (x, data) { return x + '/' + (dead+alive); }
     });
+
+    $(xmlDoc).find("mutation").each( function() {
+      var mutationName = $(this).attr("name");
+
+      $(this).find("class").each(  function()  {
+        var className = $(this).attr("name");
+
+        $("#compare"+mutationName+className).mergely({
+          width: 'auto',
+          height: 200,
+          cmsettings: {
+            readOnly: false,
+            lineWrapping: true,
+          },
+          lhs: function(setValue) {
+            setValue($(this).find("codeOriginal").text());
+          },
+          rhs: function(setValue) {
+            setValue($(this).find("codeMutant").text());
+          }
+        }).resize(function(event) {
+
+        });;
+
+      });
+    });
+
   });
   </script>
 
