@@ -33,19 +33,7 @@
                 </executions>
                 <configuration>
                     <processors>
-                        <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-
-                        <!-- Other examples
-                                                                      <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-                                               <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-                                               <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-                                               <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-                                               <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-
-                                               <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-                                               <processor>fr.unice.polytech.doct13.processors.PostDecProcessor</processor>
-
-                                               -->
+                        <processor>fr.unice.polytech.doct13.processors.MultProcessor</processor>
                     </processors>
                 </configuration>
                 <dependencies>
