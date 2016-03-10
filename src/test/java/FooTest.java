@@ -9,8 +9,8 @@ public class FooTest {
     @Test
     public void plusTest(){
         System.out.println("[TEST] Plus test if no mutations occurred");
-        // 2 + 1 = 3
-        assertEquals(3,foo.plus());
+        // 2 + 1 + 3 + 2 + 1 + 4 + 5 = 18
+        assertEquals(18,foo.plus());
     }
 
     @Test
@@ -23,7 +23,7 @@ public class FooTest {
     @Test
     public void multTest(){
         System.out.println("[TEST] Mult test if no mutations occurred");
-        // 2 * 3 = 6
-        assertEquals(6,foo.mult());
+        // 2 * 3 * 2 * 1 * 5 * 6 = 360
+        assertEquals(360,foo.mult());
     }
 }
