@@ -8,10 +8,10 @@
 			"mutation_probability": 0.3
 		},
 		"mut2":{
-			"name":"PlusProcessor",
+			"name":"MultProcessor",
 			"packageName" : "",
-			"className": "Triangle",
-			"methodName": "determineTriangleType",
+			"className": "Foo",
+			"methodName": "test",
 			"mutation_probability": 0.4
 		},
 		"mut3":{
