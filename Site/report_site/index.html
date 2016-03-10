@@ -79,40 +79,33 @@
         </div>
         <!-- /.row -->
         <div class="row">
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Stats</h3>
+                <h3 class="panel-title">Killed / Alive</h3>
               </div>
               <div class="panel-body">
                 <div id="morris-donut-chart" style="max-height: 150px;"></div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-2">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Stats</h3>
+                <h3 class="panel-title">Nb Mutations</h3>
               </div>
               <div class="panel-body">
+                <div id="nbMutations" style="max-height: 150px;"></div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-6">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Stats</h3>
+                <h3 class="panel-title">Killed/Alive by class</h3>
               </div>
               <div class="panel-body">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Stats</h3>
-              </div>
-              <div class="panel-body">
+                <div id="killedAliveClass" style="max-height: 150px;"></div>
               </div>
             </div>
           </div>
@@ -224,10 +217,14 @@
       formatter: function (x, data) { return x + '/' + (dead+alive); }
     });
 
+    var nbMutations = 0;
     $(xmlDoc).find("mutation").each( function() {
+      nbMutations++;
       var mutationName = $(this).attr("name");
 
+
       $(this).find("class").each(  function()  {
+        var alive = 0, dead = 0;
         var className = $(this).attr("name");
 
         $("#compare"+mutationName+className).mergely({
@@ -243,12 +240,26 @@
           rhs: function(setValue) {
             setValue($(this).find("codeMutant").text());
           }
-        }).resize(function(event) {
+        });
 
-        });;
+        $(this).find("method").each( function() {
+          var MethodName = $(this).attr("name");
+          var status = $(this).attr("status");
+          if (status == 'alive'){
+            alive++;
 
+          }
+          else {
+            dead++;
+          }
+        });
+
+        $("#killedAliveClass").append(mutationName+"-->"+className+": <span class='label label-success'>"+dead+" killed</span> <span class='label label-danger'>"+alive+" alive</span><br>");
       });
+
     });
+
+    $("#nbMutations").html(nbMutations+" Mutation");
 
   });
   </script>
