@@ -171,11 +171,18 @@
         var deadC = 0, aliveC = 0;
 
         var className = $(this).attr("name");
+        var classAliveMutant = $(this).attr("aliveMutant");
+        var classDeadMutant = $(this).attr("deadMutant");
         var originalPath = $(this).attr("originalPath");
         var mutantPath = $(this).attr("mutantPath");
 
         htmlMenu += "<li><a data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"' href='#"+mutationName+className+"'>"+className+"</a></li>";
-        htmlToAppend += "<div class='panel panel-default'><div class='panel-heading' data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"'><h4 class='panel-title' style='display:inline-block'>Class "+className+"</h4><div class='progress pull-right' style='width:30%; margin-bottom:0px'><div class='progress-bar progress-bar-success' role='progressbar' style='width:0%' id='killed"+mutationName+className+"'></div><div class='progress-bar progress-bar-danger' role='progressbar' style='width:100%' id='alive"+mutationName+className+"'></div></div></div><div id='collapse"+mutationName+className+"' class='panel-collapse collapse'><div class='panel-body'>";
+        htmlToAppend += "<div class='panel panel-default'><div class='panel-heading' data-toggle='collapse' data-parent='#accordion"+mutationName+"' href='#collapse"+mutationName+className+"'><h4 class='panel-title' style='display:inline-block'>Class "+className+"</h4><div class='progress pull-right' style='width:40%; margin-bottom:0px'><div class='progress-bar progress-bar-success' role='progressbar' style='width:"+((classDeadMutant/(parseInt(classAliveMutant)+parseInt(classDeadMutant)))*100)+"%;' id='killed"+mutationName+className+"'>"+classDeadMutant+" Killed</div><div class='progress-bar progress-bar-danger' role='progressbar' style='width:"+((classAliveMutant/(parseInt(classAliveMutant)+parseInt(classDeadMutant)))*100)+"%;' id='alive"+mutationName+className+"'>"+classAliveMutant+" Alive</div></div></div><div id='collapse"+mutationName+className+"' class='panel-collapse collapse'><div class='panel-body'>";
+
+        console.log(className);
+        console.log(classAliveMutant+classDeadMutant);
+        console.log(((classDeadMutant/(classAliveMutant+classDeadMutant))*100));
+        console.log(((classAliveMutant/(classAliveMutant+classDeadMutant))*100));
 
         $(this).find("method").each( function() {
           var MethodName = $(this).attr("name");
@@ -195,10 +202,6 @@
         });
         htmlToAppend += "</div></div></div>";
 
-        $("#alive"+mutationName).append(aliveM+" Alive");
-        $("#alive"+mutationName).width(((aliveM/(aliveM+deadM))*100)+"%");
-        $("#killed"+mutationName).append(deadM+" Killed");
-        $("#killed"+mutationName).width(((deadM/(aliveM+deadM))*100)+"%");
       });
       htmlMenu += "</ul></li>"
       htmlToAppend += "</div></div></div></div>";
