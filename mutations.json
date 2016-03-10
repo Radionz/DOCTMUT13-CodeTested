@@ -13,6 +13,13 @@
 			"className": "Triangle",
 			"methodName": "determineTriangleType",
 			"mutation_probability": 0.4
+		},
+		"mut3":{
+			"name":"PostDecProcessor",
+			"packageName" : "",
+			"className": "Triangle",
+			"methodName": "determineTriangleType",
+			"mutation_probability": 0.5
 		}
 	}
 }
